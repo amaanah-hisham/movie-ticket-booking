@@ -1,0 +1,81 @@
+/* Login page background */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #111;
+  color: #fff;
+}
+
+/* Login container */
+.login-container {
+  background-color: #222;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+}
+
+/* Form styles */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-container label {
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.login-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Button */
+.login-container button {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.login-container button:hover {
+  background-color: darkred;
+}
+
+/* Signup text */
+.signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup-text span {
+  color: red;
+  cursor: pointer;
+}
+
+.signup-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.signup-link:hover {
+  color: darkblue;
+}
+

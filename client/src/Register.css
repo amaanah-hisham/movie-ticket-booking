@@ -1,0 +1,76 @@
+/* Register page background */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #111;
+  color: #fff;
+}
+
+/* Register container */
+.register-container {
+  background-color: #222;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.register-container h2 {
+  margin-bottom: 25px;
+}
+
+/* Form styles */
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-container label {
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.register-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Button */
+.register-container button {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.register-container button:hover {
+  background-color: darkgreen;
+}
+
+/* Login text */
+.login-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-text a {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-text a:hover {
+  color: darkblue;
+}

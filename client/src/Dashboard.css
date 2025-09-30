@@ -1,0 +1,86 @@
+.dashboard {
+  padding: 0;
+  background: #222;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Top Navbar */
+.dashboard-navbar {
+  display: flex;
+  align-items: center;
+  background: #222;
+  padding: 15px 40px;
+  border-bottom: 2px solid #333;
+}
+
+/* App Name (left) */
+.dashboard-logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 25rem; /* space between logo and tabs */
+}
+
+/* Tabs (left-aligned) */
+.dashboard-tabs {
+  display: flex;
+  gap: 1.5rem; /* space between each tab */
+}
+
+/* Tab Buttons */
+.tab-link {
+  background: none;       
+  border: none;           
+  padding: 0.5rem 0;   
+  cursor: pointer;
+  font-size: 18px;
+  color: white;           
+  border-bottom: 2px solid transparent; /* underline effect */
+  position: relative;
+  transition: all 0.3s;
+}
+
+.tab-link:hover {
+  color: #ff4c4c; /* slightly red on hover */
+}
+
+/* Active Tab */
+.tab-link.active {
+  color: #ff4c4c;          
+  font-weight: bold;
+}
+
+.tab-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #ff4c4c; /* red underline */
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+/* Content */
+.dashboard-content {
+  padding: 20px 40px;
+}
+
+/* Right corner Home button */
+.dashboard-home-link {
+  margin-left: auto; /* pushes it to the right */
+}
+
+.home-button {
+  background: red;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.home-button:hover {
+  background: #cc0000;
+}

@@ -1,0 +1,232 @@
+.showtimes-admin {
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.showtime-form {
+  width: 100%;
+  display: flex;
+  margin-top:50px;
+  margin-bottom:40px;
+  flex-direction: column;
+  gap: 25px;
+  background: #1f1f1f;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.6), inset 1px 1px 3px rgba(255,255,255,0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.showtime-form input,
+.showtime-form select {
+  padding: 12px 15px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #222;
+  color: #fff;
+  outline: none;
+}
+
+.showtime-form input:focus,
+.showtime-form select:focus {
+  border-color: #e50914;
+}
+
+/* Times container */
+.times-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.time-input-wrapper input[type="time"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+}
+
+/* Delete icon */
+.delete-icon {
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.delete-icon:hover {
+  color: #a71d2a;
+}
+
+/* Add time button */
+.add-time-btn {
+  align-self: flex-start;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #e50914;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.add-time-btn:hover {
+  background: #b00610;
+}
+
+/* Submit button */
+.showtime-form .submit-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #e50914;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.showtime-form .submit-btn:hover {
+  background: #b00610;
+}
+
+/* Showtimes List */
+.showtimes-heading {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.showtimes-list-horizontal {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.showtime-card {
+  flex: 0 0 220px;
+  background: #222;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.1),
+              inset -2px -2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.showtime-card h3 {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.showtime-card p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 3px 0;
+}
+
+.showtime-card button {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #dc3545;
+  color: white;
+}
+
+.showtime-card button:hover {
+  background: #a71d2a;
+}
+
+.filter-container {
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-container input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  outline: none;
+}
+
+.filter-container input:focus {
+  border-color: #e50914;
+}
+
+.showtimes-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1f1f1f;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.showtimes-table th,
+.showtimes-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.showtimes-table th {
+  background: #222;
+  color: #e50914;
+}
+
+.showtimes-table td {
+  color: #fff;
+}
+
+.showtimes-table tr:hover {
+  background: #2c2c2c;
+}
+
+.showtime-form-input {
+  padding: 12px 15px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #222;
+  color: #fff;
+  outline: none;
+}
+
+.showtime-form-input:focus {
+  border-color: #e50914;
+}
+

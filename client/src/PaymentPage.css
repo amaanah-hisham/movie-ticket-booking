@@ -1,0 +1,63 @@
+/* .payment-page {
+  max-width: 420px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.payment-page h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+.stripe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stripe-form h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.card-element {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.card-element input {
+  font-size: 16px;
+  padding: 8px;
+}
+
+.pay-btn {
+  background: #6772e5;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pay-btn:hover {
+  background: #5469d4;
+}
+
+.pay-btn:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+} */

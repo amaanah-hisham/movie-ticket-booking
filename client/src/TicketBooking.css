@@ -1,0 +1,274 @@
+/* TicketBooking.css - Professional Cinema Style */
+.ticket-booking-page {
+  background: #121212; /* dark cinema theme */
+  min-height: 100vh;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 60px;
+  background: #1b1b1b;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.app-name {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #e50914;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #e50914;
+}
+
+/* Booking container */
+.booking-container {
+  width: 700px;
+  margin: 100px 20px 50px;
+  background: #1f1f1f;
+  padding: 35px 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.booking-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #e50914;
+  text-align: center;
+}
+
+.booking-container p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* Screen display */
+/* Screen display */
+.screen {
+  background: linear-gradient(180deg, #444, #222);
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 0;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+/* Seating chart */
+.seating-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+  width: 100%;
+  align-items: center; /* center the rows */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center; /* center each row */
+}
+
+.row-label {
+  width: 25px;
+  text-align: center;
+  font-weight: 600;
+  color: #ccc;
+}
+
+/* Seats */
+.seat {
+  width: 32px;
+  height: 32px;
+  background: #2ecc71;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.seat:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+
+.seat.selected {
+  background: #3498db;
+  box-shadow: 0 0 1px #3498db;
+}
+
+.seat.unavailable {
+  background: #e74c3c;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.legend .seat {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Summary and booking button */
+.summary {
+  text-align: center;
+}
+
+.summary p {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.book-btn {
+  margin-top: 15px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #e50914, #b00610);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #b00610, #e50914);
+}
+
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.legend-color {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Apply seat colors for legend squares */
+.legend-color.available {
+  background: #2ecc71; /* green */
+}
+
+.legend-color.selected {
+  background: #3498db; /* blue */
+}
+
+.legend-color.unavailable {
+  background: #e74c3c; /* red */
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .booking-container {
+    margin: 80px 10px 30px;
+    padding: 25px 15px;
+    width: 100%;
+  }
+
+  .screen {
+    width: 95%;
+  }
+
+  .seat {
+    width: 26px;
+    height: 26px;
+  }
+
+  .row-label {
+    width: 20px;
+    font-size: 14px;
+  }
+
+  .book-btn {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+.book-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Disabled state */
+.book-btn:disabled {
+    background-color: #a6a4a4;  
+    cursor: not-allowed;     
+}
+
+.book-btn:disabled:hover {
+    background-color: #ccc;   
+}
+
+
