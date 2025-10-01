@@ -10,7 +10,7 @@ const paymentRoutes = require("./routes/payment");
 const bookingRoutes = require("./routes/bookings");
 const reviewRoutes = require("./routes/reviews");
 const couponRoutes = require("./routes/couponRoutes");
-const adminRoutes = require("./routes/admin");
+const adminRoutes = require("./routes/adminRoutes");
 const { webhookHandler } = require("./routes/payment");
 
 const app = express();
