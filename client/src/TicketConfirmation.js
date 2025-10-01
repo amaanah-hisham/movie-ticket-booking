@@ -6,6 +6,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 
+
 const stripePromise = loadStripe("YOUR_STRIPE_PUBLISHABLE_KEY"); // replace with your Stripe publishable key
 
 function CheckoutForm({ netTotal }) {

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"; // import Link
 import "./Dashboard.css";
 import Movies from "./admin/Movies";
 import Showtimes from "./admin/Showtimes";
+import Coupons from "./admin/Coupons";
 
 
 // Sub-pages
@@ -10,9 +11,6 @@ function DashboardHome() {
   return <h2>Welcome to the Admin Dashboard</h2>;
 }
 
-function Coupons() {
-  return <h2>Manage Coupons</h2>;
-}
 
 function Dashboard() {
   const [activeTab, setActiveTab] = useState("dashboard");

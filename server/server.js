@@ -9,6 +9,7 @@ const showtimesRouter = require("./routes/showtimes");
 const paymentRoutes = require("./routes/payment");
 const bookingRoutes = require("./routes/bookings");
 const reviewRoutes = require("./routes/reviews");
+const couponRoutes = require("./routes/couponRoutes");
 const { webhookHandler } = require("./routes/payment");
 
 const app = express();
@@ -38,6 +39,7 @@ app.use("/api/showtimes", showtimesRouter);
 app.use("/api/payment", paymentRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/coupons", couponRoutes);
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
