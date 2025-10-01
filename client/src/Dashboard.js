@@ -4,12 +4,9 @@ import "./Dashboard.css";
 import Movies from "./admin/Movies";
 import Showtimes from "./admin/Showtimes";
 import Coupons from "./admin/Coupons";
+import AdminDashboard from "./admin/AdminDashboard";
 
 
-// Sub-pages
-function DashboardHome() {
-  return <h2>Welcome to the Admin Dashboard</h2>;
-}
 
 
 function Dashboard() {
@@ -18,7 +15,7 @@ function Dashboard() {
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
-        return <DashboardHome />;
+        return <AdminDashboard  />;
       case "movies":
         return <Movies />;
         case "shows":
@@ -26,7 +23,7 @@ function Dashboard() {
       case "coupons":
         return <Coupons />;
       default:
-        return <DashboardHome />;
+        return <AdminDashboard />;
     }
   };
 

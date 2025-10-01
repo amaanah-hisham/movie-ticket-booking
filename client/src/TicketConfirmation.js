@@ -84,9 +84,14 @@ function TicketConfirmation() {
                 selectedTime,
                 selectedSeats,
                 mobile,
+                couponCode: coupon || "",
             });
 
             window.location.href = res.data.url; // redirect to Stripe hosted checkout
+            if (coupon) {
+                await axios.post("http://localhost:5000/api/coupons/redeem", { code: coupon });
+                console.log(`Coupon ${coupon} deleted successfully after redemption`);
+            }
         } catch (err) {
             console.error("Stripe session error:", err.response?.data || err.message);
             alert("Payment initialization failed");
@@ -108,11 +113,13 @@ function TicketConfirmation() {
                 alert(`Coupon applied! You got LKR ${discountAmount.toFixed(2)} discount.`);
             } else {
                 setDiscount(0);
+                setCoupon("");  // ✅ clear invalid coupon from input field
                 alert("Invalid coupon.");
             }
         } catch (err) {
             console.error(err);
             setDiscount(0);
+            setCoupon("");  // ✅ also clear on server error
             alert(err.response?.data?.message || "Failed to validate coupon");
         }
     };

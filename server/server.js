@@ -10,6 +10,7 @@ const paymentRoutes = require("./routes/payment");
 const bookingRoutes = require("./routes/bookings");
 const reviewRoutes = require("./routes/reviews");
 const couponRoutes = require("./routes/couponRoutes");
+const adminRoutes = require("./routes/admin");
 const { webhookHandler } = require("./routes/payment");
 
 const app = express();
@@ -40,6 +41,7 @@ app.use("/api/payment", paymentRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/coupons", couponRoutes);
+app.use("/api/admin", adminRoutes);
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))

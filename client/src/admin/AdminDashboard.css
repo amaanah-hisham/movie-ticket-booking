@@ -1,0 +1,60 @@
+.admin-dashboard {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.admin-dashboard h1 {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.card p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.tables {
+  display: flex;
+  gap: 2rem;
+}
+
+.table-section {
+  flex: 1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background: #f0f0f0;
+}

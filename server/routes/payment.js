@@ -2,10 +2,10 @@ const express = require("express");
 const Stripe = require("stripe");
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const Booking = require("../models/Booking");
-
+const Coupon = require("../models/Coupon");
+const { deleteCouponByCode } = require("./couponRoutes");
 const router = express.Router();
 
-// Webhook handler
 // Webhook handler
 async function webhookHandler(req, res) {
     const sig = req.headers["stripe-signature"];
@@ -23,7 +23,8 @@ async function webhookHandler(req, res) {
 
     if (event.type === "checkout.session.completed") {
         const session = event.data.object;
-        const { userId, movieId, selectedDate, selectedTime, selectedSeats, timestamp , mobile} = session.metadata;
+        //const { userId, movieId, selectedDate, selectedTime, selectedSeats, timestamp, mobile } = session.metadata;
+        const { userId, movieId, selectedDate, selectedTime, selectedSeats, timestamp, mobile, couponCode } = session.metadata;
 
         try {
             await Booking.create({
@@ -38,7 +39,24 @@ async function webhookHandler(req, res) {
                 stripePaymentIntentId: session.payment_intent,
                 createdAt: timestamp ? new Date(timestamp) : Date.now(),
             });
+
+            // Delete coupon after successful payment
+            if (couponCode) {
+                const deleted = await deleteCouponByCode(couponCode);
+                if (deleted) {
+                    console.log(`✅ Coupon ${couponCode} redeemed and removed from DB`);
+                } else {
+                    console.log(`⚠️ Coupon ${couponCode} not found or already redeemed`);
+                }
+            }
+
+
             console.log("🎉 Booking saved successfully!");
+
+            // Delete coupon after successful payment
+            if (couponCode) {
+                await deleteCouponByCode(couponCode);
+            }
         } catch (err) {
             console.error("❌ Error saving booking:", err);
         }
@@ -51,7 +69,7 @@ async function webhookHandler(req, res) {
 
 // Checkout session route
 router.post("/create-checkout-session", async (req, res) => {
-    const { netTotal, userId, movieId, selectedDate, selectedTime, selectedSeats , mobile} = req.body;
+    const { netTotal, userId, movieId, selectedDate, selectedTime, selectedSeats, mobile } = req.body;
 
     try {
         const session = await stripe.checkout.sessions.create({
@@ -76,6 +94,7 @@ router.post("/create-checkout-session", async (req, res) => {
                 selectedTime,
                 selectedSeats: selectedSeats ? selectedSeats.join(",") : "",
                 mobile,
+                couponCode: req.body.couponCode || "", 
                 timestamp: new Date().toISOString(),
             },
 

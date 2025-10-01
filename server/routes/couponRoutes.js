@@ -98,4 +98,39 @@ router.get("/validate/:code", async (req, res) => {
   }
 });
 
-module.exports = router;
+// Delete coupon by code (after redemption)
+const deleteCouponByCode = async (code) => {
+  const coupons = await Coupon.find();
+
+  for (let c of coupons) {
+    if (CryptoJS.AES.decrypt(c.code, SECRET_KEY).toString(CryptoJS.enc.Utf8) === code.toUpperCase()) {
+      await Coupon.deleteOne({ _id: c._id });
+      console.log(`✅ Coupon ${code} deleted successfully`);
+      return true;
+    }
+  }
+
+  console.log(`⚠️ Coupon ${code} not found or already redeemed`);
+  return false;
+};
+
+// POST /api/coupons/redeem
+router.post("/redeem", async (req, res) => {
+  try {
+    const { code } = req.body;
+    if (!code) return res.status(400).json({ message: "Coupon code is required" });
+
+    const deleted = await deleteCouponByCode(code);
+    if (!deleted) return res.status(404).json({ message: "Coupon not found or already redeemed" });
+
+    res.json({ message: `Coupon ${code} redeemed successfully` });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error", error: err.message });
+  }
+});
+
+
+module.exports = router; // router for Express
+module.exports.deleteCouponByCode = deleteCouponByCode; // helper
+
