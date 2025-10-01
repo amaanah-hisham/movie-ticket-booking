@@ -8,13 +8,14 @@ const moviesRoute = require("./routes/movies");
 const showtimesRouter = require("./routes/showtimes");
 const paymentRoutes = require("./routes/payment");
 const bookingRoutes = require("./routes/bookings");
+const reviewRoutes = require("./routes/reviews");
 const { webhookHandler } = require("./routes/payment");
 
 const app = express();
 const path = require("path");
 
 // CORS
-app.use(cors({ origin: "http://localhost:3000", methods: ["GET", "POST"] }));
+app.use(cors({ origin: "http://localhost:3000", methods: ["GET", "POST", "PUT", "DELETE"] }));
 
 // ⚠️ Stripe webhook route FIRST (before body parsers)
 app.post(
@@ -34,8 +35,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/movies", moviesRoute);
 app.use("/api/showtimes", showtimesRouter);
-app.use("/api/payment", paymentRoutes); // contains /create-checkout-session
-// app.use("/api/bookings", bookingRoutes);
+app.use("/api/payment", paymentRoutes);
+app.use("/api/bookings", bookingRoutes);
+app.use("/api/reviews", reviewRoutes);
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))

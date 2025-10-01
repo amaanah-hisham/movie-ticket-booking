@@ -117,6 +117,4 @@ router.get("/debug-bookings", async (req, res) => {
   }
 });
 
-
-
 module.exports = router;
