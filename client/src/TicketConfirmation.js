@@ -5,6 +5,7 @@ import "./headerAndfooter.css";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
+import CryptoJS from "crypto-js";
 
 
 const stripePromise = loadStripe("YOUR_STRIPE_PUBLISHABLE_KEY"); // replace with your Stripe publishable key
@@ -40,6 +41,7 @@ function CheckoutForm({ netTotal }) {
             alert("Payment successful!");
             navigate("/"); // Redirect to home or booking history
         }
+
     };
 
     return (
@@ -66,15 +68,6 @@ function TicketConfirmation() {
     const netTotal = total - discount;
     const [mobile, setMobile] = useState("");
 
-    const handleApplyCoupon = () => {
-        if (coupon === "SAVE200") {
-            setDiscount(200);
-            alert("Coupon applied! LKR 200 discount granted.");
-        } else {
-            setDiscount(0);
-            alert("Invalid coupon.");
-        }
-    };
 
     const handlePayNow = async () => {
         if (!mobile) {
@@ -99,6 +92,31 @@ function TicketConfirmation() {
             alert("Payment initialization failed");
         }
     };
+
+    const handleApplyCoupon = async () => {
+        if (!coupon) {
+            alert("Please enter a coupon code.");
+            return;
+        }
+
+        try {
+            const res = await axios.get(`http://localhost:5000/api/coupons/validate/${coupon}`);
+            if (res.data.valid) {
+                // Calculate 10% discount capped at 1000
+                const discountAmount = Math.min(total * 0.1, 1000);
+                setDiscount(discountAmount);
+                alert(`Coupon applied! You got LKR ${discountAmount.toFixed(2)} discount.`);
+            } else {
+                setDiscount(0);
+                alert("Invalid coupon.");
+            }
+        } catch (err) {
+            console.error(err);
+            setDiscount(0);
+            alert(err.response?.data?.message || "Failed to validate coupon");
+        }
+    };
+
 
     const handleLogout = () => {
         localStorage.removeItem("user");
@@ -168,6 +186,7 @@ function TicketConfirmation() {
                     />
                     <button onClick={handleApplyCoupon} className="apply-coupon-btn">Apply</button>
                 </div>
+
 
                 {/* Purchase Summary */}
                 <div className="purchase-summary">

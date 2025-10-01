@@ -72,4 +72,30 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Helper to decrypt coupon code
+const decryptCode = (encryptedCode) => {
+  const bytes = CryptoJS.AES.decrypt(encryptedCode, SECRET_KEY);
+  return bytes.toString(CryptoJS.enc.Utf8);
+};
+
+// GET /api/coupons/validate/:code
+router.get("/validate/:code", async (req, res) => {
+  try {
+    const code = req.params.code.toUpperCase();
+    const coupons = await Coupon.find();
+
+    // Decrypt and check if the code exists
+    const found = coupons.some(c => decryptCode(c.code) === code);
+
+    if (!found) {
+      return res.status(404).json({ valid: false, message: "Invalid coupon" });
+    }
+
+    res.json({ valid: true, message: "Coupon is valid" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ valid: false, message: "Server error", error: err.message });
+  }
+});
+
 module.exports = router;
