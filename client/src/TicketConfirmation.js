@@ -137,11 +137,25 @@ function TicketConfirmation() {
             <nav className="navbar">
                 <div className="app-name">PulseCinema</div>
                 <ul className="nav-links">
-                    <li><Link to="/" className="nav-link">Home</Link></li>
-                    <li>Movies</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                    <li>
+                        <Link to="/" className="nav-link">Home</Link>
+                    </li>
+                    {/* <li>
+                        <Link to="/movies" className="nav-link">Movies</Link>
+                    </li> */}
+                    <li>
+                        <Link to="/about" className="nav-link">About</Link>
+                    </li>
+                    <li>
+                        <Link to="/hallBooking" className="nav-link">Events</Link>
+                    </li>
+                    {user && user.email === "admin@gmail.com" && (
+                        <li>
+                            <Link to="/dashboard" className="nav-link">Dashboard</Link>
+                        </li>
+                    )}
                 </ul>
+
 
                 {/* Login / Logout */}
                 {user ? (

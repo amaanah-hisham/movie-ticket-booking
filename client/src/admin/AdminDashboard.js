@@ -142,7 +142,7 @@ function AdminDashboard() {
                                 cx="50%"
                                 cy="50%"
                                 outerRadius={120}
-                                label={false} // <-- disable labels on the slices
+                                label={false} 
                             >
                                 {pieChartData.map((entry, index) => (
                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

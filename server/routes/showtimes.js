@@ -9,7 +9,6 @@ router.get("/", async (req, res) => {
   try {
     const showtimes = await Showtime.find().populate("movieId");
     // include movie title in response
-    // include movie title in response
     const formatted = showtimes.map(s => ({
       _id: s._id,
       movieId: s.movieId._id,

@@ -235,7 +235,7 @@ router.get("/revenue-per-day", async (req, res) => {
                 }
             },
             { $sort: { _id: -1 } }, 
-            { $limit: 5 }            
+            { $limit: 20 }            
         ]);
 
         // reverse to display oldest to latest

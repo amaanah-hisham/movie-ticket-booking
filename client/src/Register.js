@@ -1,7 +1,7 @@
 // src/Register.js
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios"; // 1️⃣ Import Axios
+import axios from "axios"; 
 import "./Register.css";
 
 function Register() {

@@ -15,6 +15,8 @@ import PaymentPage from "./paymentPage";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Success from "./Success";
+import HallBooking from "./HallBooking";
+import SuccessHallBooking from "./SuccessHallBooking";
 const stripePromise = loadStripe("YOUR_STRIPE_PUBLISHABLE_KEY");
 
 function Home() {
@@ -54,16 +56,25 @@ function Home() {
       <nav className="navbar">
         <div className="app-name">PulseCinema</div>
         <ul className="nav-links">
-          <li>Home</li>
-          <li>Movies</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/" className="nav-link">Home</Link>
+          </li>
+          {/* <li>
+            <Link to="/movies" className="nav-link">Movies</Link>
+          </li> */}
+          <li>
+            <Link to="/about" className="nav-link">About</Link>
+          </li>
+          <li>
+            <Link to="/hallBooking" className="nav-link">Events</Link>
+          </li>
           {user && user.email === "admin@gmail.com" && (
             <li>
               <Link to="/dashboard" className="nav-link">Dashboard</Link>
             </li>
           )}
         </ul>
+
 
         {user ? (
           <button className="login-btn" onClick={handleLogout}>Logout</button>
@@ -143,7 +154,8 @@ function AppWrapper() {
           }
         />
         <Route path="/success" element={<Success />} />
-
+        <Route path="/hallBooking" element={<HallBooking />} />
+        <Route path="/successHallBooking" element={<SuccessHallBooking />} />
 
       </Routes>
     </Router>

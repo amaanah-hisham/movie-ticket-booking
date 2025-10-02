@@ -41,6 +41,8 @@
   border: none;
   outline: none;
   font-size: 14px;
+  background-color: #fff;
+  color: #111;
 }
 
 /* Button */
@@ -69,13 +71,3 @@
   color: red;
   cursor: pointer;
 }
-
-.signup-link {
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer;
-}
-.signup-link:hover {
-  color: darkblue;
-}
-

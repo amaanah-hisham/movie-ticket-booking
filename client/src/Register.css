@@ -41,6 +41,8 @@
   border: none;
   outline: none;
   font-size: 14px;
+  background-color: #fff;
+  color: #111;
 }
 
 /* Button */
