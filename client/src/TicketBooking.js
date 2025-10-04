@@ -63,7 +63,7 @@ function TicketBooking() {
                 console.log("🔄 Starting API call...");
 
                 const params = {
-                    movieId: movie._id, // This should be the string ID like "68dabfda9099842766d6e43a"
+                    movieId: movie._id, 
                     date: selectedDate,
                     time: selectedTime,
                 };

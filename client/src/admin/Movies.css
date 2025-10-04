@@ -1,21 +1,21 @@
 .movies-admin {
   padding: 20px;
-  max-width: 600px;  /* smaller width */
-  margin: 40px auto; /* centers the form vertically with some top/bottom spacing */
+  max-width: 600px;  
+  margin: 40px auto; 
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .movies-admin h2 {
-  margin-top: -20px;      /* remove top margin */
-  margin-bottom: 20px; /* optional: small space below heading */
+  margin-top: -20px;      
+  margin-bottom: 20px; 
   color: #fff;
   font-size: 28px;
 }
 
 
 .movie-form {
-  width: 100%; /* take full width of the container */
+  width: 100%; 
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -35,10 +35,10 @@
   color: #fff;
   outline: none;
   transition: border 0.3s;
-  resize: vertical;       /* only vertical resizing */
-  min-height: 100px;      /* default height */
-  width: 100%;            /* ensures it stays within the form container */
-  box-sizing: border-box; /* include padding and border in width */
+  resize: vertical;       
+  min-height: 100px;      
+  width: 100%;            
+  box-sizing: border-box; 
 }
 
 
@@ -116,14 +116,14 @@
   color: #fff;
 }
 
-/* Horizontally scrollable container with smooth swipe */
+/* Horizontally scrollable container */
 .movie-list-horizontal {
   display: flex;
   gap: 20px;
   overflow-x: auto;
   padding-bottom: 10px;
-  scroll-behavior: smooth; /* smooth scrolling */
-  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+  scroll-behavior: smooth; 
+  -webkit-overflow-scrolling: touch; 
 }
 
 .movie-list-horizontal::-webkit-scrollbar {
@@ -141,18 +141,18 @@
 
 /* Individual movie card */
 .movie-card {
-  flex: 0 0 200px; /* fixed width */
-  background: #222; /* dark background */
+  flex: 0 0 200px; 
+  background: #222; 
   border-radius: 8px;
   padding: 10px;
   text-align: center;
   box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.1),
-              inset -2px -2px 5px rgba(0, 0, 0, 0.7); /* embossed effect */
+              inset -2px -2px 5px rgba(0, 0, 0, 0.7); 
   transition: transform 0.2s;
 }
 
 .movie-card:hover {
-  transform: scale(1.05); /* slight zoom on hover */
+  transform: scale(1.05); 
 }
 
 /* Image with fixed height */

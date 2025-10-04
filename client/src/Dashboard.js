@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // import Link
+import { Link } from "react-router-dom"; 
 import "./Dashboard.css";
 import Movies from "./admin/Movies";
 import Showtimes from "./admin/Showtimes";

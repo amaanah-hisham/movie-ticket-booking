@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ message: "Invalid movieId or userId" });
     }
 
-    // Use 'new' to create ObjectId instances
+    // create ObjectId instances
     movieId = new mongoose.Types.ObjectId(movieId);
     userId = new mongoose.Types.ObjectId(userId);
 

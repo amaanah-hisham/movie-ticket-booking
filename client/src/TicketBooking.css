@@ -1,6 +1,6 @@
 /* TicketBooking.css - Professional Cinema Style */
 .ticket-booking-page {
-  background: #121212; /* dark cinema theme */
+  background: #121212; 
   min-height: 100vh;
   color: #fff;
   font-family: "Roboto", sans-serif;
@@ -101,14 +101,14 @@
   gap: 12px;
   margin-bottom: 25px;
   width: 100%;
-  align-items: center; /* center the rows */
+  align-items: center; 
 }
 
 .row {
   display: flex;
   align-items: center;
   gap: 10px;
-  justify-content: center; /* center each row */
+  justify-content: center; 
 }
 
 .row-label {
@@ -209,15 +209,15 @@
 
 /* Apply seat colors for legend squares */
 .legend-color.available {
-  background: #2ecc71; /* green */
+  background: #2ecc71; 
 }
 
 .legend-color.selected {
-  background: #3498db; /* blue */
+  background: #3498db; 
 }
 
 .legend-color.unavailable {
-  background: #e74c3c; /* red */
+  background: #e74c3c; 
 }
 
 /* Responsive for small screens */

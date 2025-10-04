@@ -18,13 +18,13 @@
 .dashboard-logo {
   font-size: 24px;
   font-weight: bold;
-  margin-right: 25rem; /* space between logo and tabs */
+  margin-right: 25rem; 
 }
 
 /* Tabs (left-aligned) */
 .dashboard-tabs {
   display: flex;
-  gap: 1.5rem; /* space between each tab */
+  gap: 1.5rem; 
 }
 
 /* Tab Buttons */
@@ -35,13 +35,13 @@
   cursor: pointer;
   font-size: 18px;
   color: white;           
-  border-bottom: 2px solid transparent; /* underline effect */
+  border-bottom: 2px solid transparent; 
   position: relative;
   transition: all 0.3s;
 }
 
 .tab-link:hover {
-  color: #ff4c4c; /* slightly red on hover */
+  color: #ff4c4c; 
    background: none;
 }
 
@@ -56,7 +56,7 @@
   display: block;
   width: 100%;
   height: 3px;
-  background: #ff4c4c; /* red underline */
+  background: #ff4c4c;  
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -69,7 +69,7 @@
 
 /* Right corner Home button */
 .dashboard-home-link {
-  margin-left: auto; /* pushes it to the right */
+  margin-left: auto; 
 }
 
 .home-button {

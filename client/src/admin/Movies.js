@@ -8,7 +8,7 @@ function Movies() {
         title: "",
         storyline: "",
         ticketPrice: "",
-        image: null, // store file
+        image: null, 
     });
     const [editingId, setEditingId] = useState(null);
 

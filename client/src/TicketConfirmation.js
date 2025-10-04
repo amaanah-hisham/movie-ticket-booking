@@ -8,7 +8,7 @@ import axios from "axios";
 import CryptoJS from "crypto-js";
 
 
-const stripePromise = loadStripe("YOUR_STRIPE_PUBLISHABLE_KEY"); // replace with your Stripe publishable key
+const stripePromise = loadStripe("YOUR_STRIPE_PUBLISHABLE_KEY"); 
 
 function CheckoutForm({ netTotal }) {
     const stripe = useStripe();
@@ -119,7 +119,7 @@ function TicketConfirmation() {
         } catch (err) {
             console.error(err);
             setDiscount(0);
-            setCoupon("");  // ✅ also clear on server error
+            setCoupon("");  // clear on server error
             alert(err.response?.data?.message || "Failed to validate coupon");
         }
     };

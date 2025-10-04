@@ -53,7 +53,7 @@ router.get("/seats", async (req, res) => {
       });
     });
 
-    // Now get the specific bookings for our date/time
+    // getting specific bookings for date/time
     const bookings = await Booking.find(query);
     
     console.log(`📊 Found ${bookings.length} bookings matching exact criteria`);

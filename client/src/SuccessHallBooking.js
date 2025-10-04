@@ -8,7 +8,7 @@ export default function Success() {
     return (
         <div className="success-page">
             <div className="success-container">
-                <h1>🎉 Payment Successful!</h1>
+                <h1>🎉 Booking Successful!</h1>
                 <p>Thank you for your booking. We will Contact you shortly.</p>
                 <div className="success-actions">
                     <button
